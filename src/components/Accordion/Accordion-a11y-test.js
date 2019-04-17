@@ -10,15 +10,15 @@ it('has no errors', () => {
     </Accordion>
   );
   const accordionNode = accordionComponent.getDOMNode();
-  const config = {};
+  const config = {
+    rules: {
+      'color-contrast': { enabled: false },
+      'link-in-text-block': { enabled: false },
+    },
+  };
 
-  axe
-    .run(accordionNode, config)
-    .then((err, { violations }) => {
-      expect(err).toBe(null);
-      expect(violations).toHaveLength(666);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+  axe.run(accordionNode, config).then(result => {
+    const { violations } = result;
+    expect(violations).toHaveLength(0);
+  });
 });
