@@ -168,6 +168,7 @@
     "@storybook/addons": "~4.0.12",
     "@storybook/react": "~4.0.12",
     "all-contributors-cli": "^5.2.1",
+    "axe-core": "^3.2.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -242,8 +243,16 @@
       "@commitlint/config-conventional"
     ],
     "rules": {
-      "header-max-length": [2, "always", 50],
-      "body-max-line-length": [2, "always", 72]
+      "header-max-length": [
+        2,
+        "always",
+        50
+      ],
+      "body-max-line-length": [
+        2,
+        "always",
+        72
+      ]
     }
   },
   "husky": {
